@@ -1,0 +1,194 @@
+@import "./tailwind.config.css";
+
+/* Your custom styles below */
+
+.page-container {
+  @apply min-h-screen flex flex-col bg-gradient-to-br from-green-500 via-yellow-100 to-green-950 
+  max-lg:h-auto max-lg:max-h-none
+}
+
+.wrapper {
+  @apply flex-1 relative max-h-[calc(100vh-10rem)]
+          max-lg:max-h-none max-lg:h-auto;
+}
+
+.header {
+  @apply flex gap-8 justify-between items-center flex-wrap bg-green-600;
+}
+
+.header__title {
+  @apply block text-4xl font-bold uppercase text-blue-950 p-3 w-auto items-center -ml-[calc(50vw-30px)] 
+         max-lg:text-3xl max-lg:ml-0;
+}
+
+.navbar__container {
+  @apply w-auto mx-4 z-2;
+}
+
+.navbar__list {
+  @apply flex gap-8 font-medium text-2xl;
+}
+
+.navbar__link {
+  @apply text-black hover:text-white hover:bg-slate-600 hover:shadow-lg p-2 rounded-md transition-all duration-300;
+}
+
+.main-container {
+  @apply flex items-stretch gap-4 p-4 max-h-[calc(100vh-10rem)]
+         max-lg:flex-col max-lg:h-auto max-lg:max-h-none;
+}
+
+.tree {
+  @apply flex flex-col gap-4 bg-green-600/80 w-1/4
+         sticky top-4
+         rounded-xl shadow-xl max-h-[calc(100vh-10rem)]
+         backdrop-blur-sm border border-green-400
+         overflow-y-auto p-6
+         max-lg:w-full max-lg:h-[300px] max-lg:max-h-[500px] max-lg:relative max-lg:top-0;
+  position: -webkit-sticky;  /* For Safari */
+  position: sticky;
+}
+
+@media (max-width: 1024px) {
+  .tree {
+    position: relative;
+  }
+  
+}
+
+
+.tree__title {
+  @apply text-2xl font-bold text-white 
+         border-b-2 border-green-400 pb-2;
+}
+
+.tree__list {
+  @apply flex flex-col gap-2;
+}
+
+.tree__item {
+  @apply relative pl-4;
+}
+
+.tree__item--parent {
+  @apply mb-2;
+}
+
+.tree__link {
+  @apply text-white hover:text-green-200 transition-colors duration-200
+         flex items-center gap-2;
+}
+
+.tree__link--parent {
+  @apply font-semibold;
+}
+
+.tree__sublist {
+  @apply pl-6 mt-2 flex flex-col gap-1;
+}
+
+.content {
+  @apply flex-1 mx-8 p-6 bg-white/20 backdrop-blur-sm rounded-xl shadow-xl 
+         overflow-y-auto max-h-[calc(100vh-10rem)]
+         max-lg:mx-0 max-lg:p-4 max-lg:h-auto max-lg:max-h-none;
+}
+
+.content__title {
+  @apply text-3xl font-bold text-blue-950 mb-6 border-b-2 border-blue-950 pb-2;
+}
+
+.content__body {
+  @apply text-lg text-gray-800 leading-relaxed space-y-4;
+}
+
+.content__intro {
+  @apply bg-white/10 p-6 rounded-xl backdrop-blur-sm;
+}
+
+.content__card {
+  @apply bg-white/10 p-4 rounded-xl backdrop-blur-sm;
+}
+
+.content__h3 {
+  @apply text-2xl font-bold text-black mb-4;
+}
+
+.content__h4 {
+  @apply text-xl font-bold text-gray-900 mb-2;
+}
+
+.content__text {
+  @apply text-gray-500 leading-relaxed;
+}
+
+.content__text-dark {
+  @apply text-gray-800 leading-relaxed mb-6;
+}
+
+.content__card-list {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-500;
+}
+
+.content__card-item {
+  @apply flex items-start space-x-2;
+}
+
+.content__list-icon {
+  @apply w-6 h-6 text-green-400 flex-shrink-0;
+}
+
+
+.sidebar {
+  @apply flex flex-col gap-4 bg-green-600/80 w-1/4
+         top-4
+         rounded-xl shadow-xl max-h-[calc(100vh-10rem)]
+         backdrop-blur-sm border border-green-400
+         overflow-y-auto p-6
+         max-lg:w-full max-lg:h-[300px] max-lg:max-h-[500px] max-lg:relative max-lg:top-0;
+}
+
+.sidebar__title {
+  @apply text-2xl font-bold text-white
+         border-b-2 border-green-400 pb-2;
+}
+
+.sidebar__projects {
+  @apply flex flex-col gap-1 overflow-hidden 
+  max-lg:flex-row max-lg:overflow-x-auto max-lg:justify-around;
+}
+
+.sidebar__project {
+  @apply bg-black/30 rounded-xl overflow-hidden my-4;
+}
+
+.project__image {
+  @apply w-full h-48 object-cover;
+}
+
+.project__content {
+  @apply p-4 bg-black/50 backdrop-blur-sm;
+}
+
+.project__title {
+  @apply text-lg font-bold text-white mb-2;
+}
+
+.project__description {
+  @apply text-sm text-gray-200 leading-relaxed;
+}
+
+/* Dot navigation */
+.sidebar__dots {
+  @apply flex justify-center gap-4 mt-2 w-full
+  max-lg:hidden max-lg:opacity-0 max-lg:transition-all max-lg:duration-300;
+}
+
+.sidebar__dot {
+  @apply w-3 h-3 rounded-full bg-gray-300
+         transition-all duration-300 cursor-pointer;
+}
+
+.sidebar__dot--active {
+  @apply w-3 h-3 rounded-full bg-white 
+  transition-all duration-300 cursor-pointer scale-125;
+}
